@@ -103,16 +103,4 @@ export default class PagingCursor {
     }
     return PagingCursor.toUrlSafeBase64(JSON.stringify([metaInfo, ...this.values]));
   }
-
-  /**
-   * Reverse the direction of the cursor by inverting its {@link descending} flags.
-   */
-  public reverse(): void {
-    const direction = this.descending;
-    if (direction) {
-      for (let i = direction.length - 1; i >= 0; i--) {
-        direction[i] = !direction[i];
-      }
-    }
-  }
 }

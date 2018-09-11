@@ -46,28 +46,6 @@ describe('PagingCursor test', () => {
     });
   });
 
-  describe('reverse', () => {
-    it('should invert descending flags', () => {
-      const cursor = new PagingCursor([1, 2, 3], context, [false, false, true, false]);
-      cursor.reverse();
-      expect([cursor.values, cursor.context, cursor.descending]).toEqual([
-        [1, 2, 3],
-        context,
-        [true, true, false, true]
-      ]);
-    });
-
-    it('should be NoOp without descending flags', () => {
-      const cursor = new PagingCursor([1, 2, 3], context);
-      cursor.reverse();
-      expect([cursor.values, cursor.context, cursor.descending]).toEqual([
-        [1, 2, 3],
-        context,
-        undefined
-      ]);
-    });
-  });
-
   describe('compare', () => {
     const smallCursor = new PagingCursor([false, 'hello', 2]);
     const largeCursor = new PagingCursor([false, 'hello', 10]);
