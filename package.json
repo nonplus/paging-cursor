@@ -12,7 +12,7 @@
   "author": "Stepan Riha <github@nonplus.net>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nonplus/paging-cursor.git"
+    "url": "https://github.com/nonplus/paging-cursor.git"
   },
   "license": "MIT",
   "engines": {

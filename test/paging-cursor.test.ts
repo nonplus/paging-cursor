@@ -83,6 +83,20 @@ describe('PagingCursor test', () => {
       expect(
         PagingCursor.compare(smallDescCursor.toString(), largeDescCursor.toString())
       ).toBeLessThan(0);
+
+      expect(PagingCursor.compare(largeDescCursor, smallDescCursor)).toBeGreaterThan(0);
+      expect(PagingCursor.compare(largeDescCursor, smallDescCursor.toString())).toBeGreaterThan(0);
+      expect(PagingCursor.compare(largeDescCursor.toString(), smallDescCursor)).toBeGreaterThan(0);
+      expect(
+        PagingCursor.compare(largeDescCursor.toString(), smallDescCursor.toString())
+      ).toBeGreaterThan(0);
+
+      expect(PagingCursor.compare(largeDescCursor, largeDescCursor)).toEqual(0);
+      expect(PagingCursor.compare(largeDescCursor, largeDescCursor.toString())).toEqual(0);
+      expect(PagingCursor.compare(largeDescCursor.toString(), largeDescCursor)).toEqual(0);
+      expect(PagingCursor.compare(largeDescCursor.toString(), largeDescCursor.toString())).toEqual(
+        0
+      );
     });
   });
 });
